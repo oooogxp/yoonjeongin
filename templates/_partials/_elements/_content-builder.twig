@@ -1,0 +1,25 @@
+{% for block in content %}
+
+  {% switch block.type.handle %}
+    {% case 'text' %}
+      <div>
+        {{ block.richText }}
+      </div>
+    {% case 'headline' %}
+      {% include '_partials/content-headline.twig' with {data: block} only %}
+
+    {% case 'accordion' %}
+      {% include '_partials/_elements/_accordion.twig' with {data: block} only %}
+
+    {% case 'carousel' %}
+      {% include '_partials/_elements/_carousel.twig' with {data: block} only %}
+
+    {% default %}
+      <div class="container-max-screen px-8 md:px-20">
+        <p>
+          {{ block.type.handle }} is not implemented yet
+        </p>
+      </div>
+  {% endswitch %}
+
+{% endfor %}

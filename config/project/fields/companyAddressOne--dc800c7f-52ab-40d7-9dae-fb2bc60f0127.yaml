@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: dd11dc8a-c8ec-4ed5-9620-ce9b283cf148 # Company Info
+handle: companyAddressOne
+instructions: 'Enter Address Line 1'
+name: 'Company Address 1'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: '20 South Clark Street, Suite 2400'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

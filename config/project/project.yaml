@@ -1,0 +1,80 @@
+dateModified: 1621414823
+email:
+  fromEmail: will@legioncollective.com
+  fromName: 'Craft Template'
+  replyToEmail: null
+  template: ''
+  transportSettings:
+    command: ''
+  transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.3.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  mix:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      assetPath: assets
+      publicPath: web
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: 1ER73BD3XWZH4SZ87ZP801F1
+    schemaVersion: 1.0.21
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: SKS3OYZJLPRMS770ZMDLE3QQ
+    schemaVersion: 2.8.16
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  retour:
+    edition: standard
+    enabled: false
+    licenseKey: I94Q8B1F8BQQ4Y41XN8RYXJU
+    schemaVersion: 3.0.9
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: NVXCPVF0SZ1FQXRHX4LP7CJF
+    schemaVersion: 3.0.9
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+  twigpack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: pro
+  live: true
+  name: 'Craft Template'
+  retryDuration: null
+  schemaVersion: 3.6.8
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: ''
+  fieldLayouts:
+    74cc5c68-ffaf-473f-9479-d31790052b40: null
+  photoSubpath: ''
+  photoVolumeUid: 19f3c2d1-c7d3-4c94-b272-44315997a0b5 # Team
+  requireEmailVerification: true

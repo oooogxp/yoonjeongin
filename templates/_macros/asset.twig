@@ -1,0 +1,40 @@
+{# NOTE: Need to receive following arguments:
+1. url - url object / string
+2. attributes - obj (class, alt, style etc)
+#}
+
+{%- macro image(src = null, attributes = {}) -%}
+  {% import '_macros/placeholder.twig' as placeholder %}
+  
+  {% if src == null %}
+    {% set src = placeholder.randomURL() %}
+  {% endif %}
+  
+  {% set attributes = attributes|merge({src: src}) %}
+  {{tag('img', attributes)}}
+{%- endmacro -%}
+
+{%- macro internalVideo(src = null, attributes = {'class': ''}) -%}
+  <video class="mx-auto shadow-xl {{ attributes.class }}" controls>
+    <source src={{ src }} type="video/mp4">
+  </video>
+{%- endmacro -%}
+
+{%- macro externalVideo(src = null, playbutton = true, attributes = {'class': ''}) -%}
+  {# NOTE: Getting YouTubeID. Source: https://supergeekery.com/blog/extracting-a-youtube-id-from-a-url-with-twig #}
+  {% set ytregex1 = '/^(?:https?:\\/\\/)?(?:www\.)?(?:youtu\.be\\/|youtube\.com)(?:\\/embed\\/|\\/v\\/|\\/watch\\?v=||\\/watch\\\?.+&v=)/' %}
+  {% set ytregexTrailingSlash = '/(\\/)$/' %}
+  {% set ytregexTrailingVariables = '/(&+.*)/' %}
+  {% set youtubeid = src | replace(ytregex1, '') | replace(ytregexTrailingSlash, '') | replace(ytregexTrailingVariables, '') %}
+
+  {# {% if playbutton %}
+    <a class="bg-cover bg-center flex justify-center items-center cursor-pointer hover:opacity-75" style="background-image: url('https://img.youtube.com/vi/{{ youtubeid }}/hqdefault.jpg'); min-height: 500px;" >
+      {% include "_inline-svg/video_play.svg"%}
+    </a>
+  {% endif %} #}
+  <div class="video-container relative w-full h-full">
+    <iframe class="video-iframe absolute top-0 left-0 w-full h-full mx-auto {{ attributes.class }}" src="https://www.youtube.com/embed/{{ youtubeid }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+{%- endmacro -%}
+
+{# width="560" height="315" #}

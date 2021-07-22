@@ -1,0 +1,35 @@
+<aside class="cookie-banner-container hidden fixed p-10 z-50 bottom-0 w-screen custom-bg-color-light-gray">
+  <img class="cookie-banner-container-close absolute cursor-pointer w-6" style="right: 1em; top: 1em;" src="/assets/global/close.svg" alt="Close"/>
+  <p class="w-1/2">By choosing to accept, you consent to the use of all cookies required for basic site functionality and to analyze site traffic. Learn more in our <a href="/#">privacy policy.</a></p>
+  <div class="w-1/2">
+    <button class="accept-cookie-consent uppercase text-sm font-semibold flex items-center custom-bg-color-gray p-1 pr-6 rounded-full"><img class="mr-4" src="/assets/global/arrow_black.svg" alt="Arrow Black"/>Accept Cookies</button>
+  </div>
+</aside>
+
+{# Cookie Setting #}
+<script>
+  if (window.document.documentMode) {
+    document.querySelector('.cookie-banner-container-close').addEventListener('click', closeCookieBanner);
+    // Display Cookie banner if Cookie Setting is not set (null)
+    if (sessionStorage.getItem('cookieSetting') !== 'true') {
+      if (sessionStorage.getItem('noCookie') !== 'true') {
+        document.querySelector('.cookie-banner-container').classList.remove('hidden');
+        document.querySelector('.cookie-banner-container').classList.add('flex');
+      }
+    }
+    // console.log(sessionStorage.getItem('cookieSetting'), sessionStorage.getItem('noCookie'));
+    document.querySelector('.accept-cookie-consent').addEventListener('click', activateCookie);
+
+    const activateCookie = () => {
+      document.querySelector('.cookie-banner-container').classList.add('hidden');
+      document.querySelector('.cookie-banner-container').classList.remove('flex');
+      sessionStorage.setItem('cookieSetting', 'true');
+    };
+
+    const closeCookieBanner = () => {
+      document.querySelector('.cookie-banner-container').classList.add('hidden');
+      document.querySelector('.cookie-banner-container').classList.remove('flex');
+      sessionStorage.setItem('noCookie', 'true');
+    };
+  }
+</script>

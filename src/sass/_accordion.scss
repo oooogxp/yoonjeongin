@@ -1,0 +1,7 @@
+article.accordion {
+  &.active {
+    p.hidden {
+      display: block;
+    }
+  }
+}

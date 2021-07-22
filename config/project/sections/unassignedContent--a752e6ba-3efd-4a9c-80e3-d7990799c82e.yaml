@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: unassignedContent
+name: 'Unassigned Content'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  988e54bc-f2ef-46d4-b73b-3af77d27754d: # Craft-template
+    enabledByDefault: true
+    hasUrls: true
+    template: template/_custom
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 2e214be5-2279-4601-937e-9401f36b438b
+type: structure

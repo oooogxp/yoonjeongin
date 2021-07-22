@@ -1,0 +1,10 @@
+/.env
+/.idea
+/vendor
+.DS_Store
+/node_modules
+/public
+
+/web/assets/*
+!/web/assets/global
+!/web/assets/error

@@ -1,0 +1,36 @@
+// Tailwind
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+// Glide
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+// Optional Theme Stylesheet
+// @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+@import './global';
+@import './font';
+
+// Sections
+@import './nav';
+@import './header';
+
+// Modules
+@import './backdrop';
+@import './modal';
+@import './accordion';
+@import './articles';
+
+// Responsive Breakpoints:
+// Small (sm)
+// @media (min-width: 640px) { /* ... */ }
+
+// Medium (md)
+// @media (min-width: 768px) { /* ... */ }
+
+// Large (lg)
+// @media (min-width: 1024px) { /* ... */ }
+
+// Extra Large (xl)
+// @media (min-width: 1280px) { /* ... */ }

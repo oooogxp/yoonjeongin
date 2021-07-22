@@ -1,0 +1,30 @@
+{# -- This is a place for any Meta that needs to exist on every page on the site -- #}
+
+{# Basic meta tags #}
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{# Prefetch & preconnect headers and links #}
+{% set headerLink = "Link: " %}
+{% for url in prefetchUrls %}
+    {% set headerLink = headerLink ~ "<#{url}>; rel=dns-prefetch;," %}
+    {% set headerLink = headerLink ~ "<#{url}>; rel=preconnect; crossorigin;" %}
+    {% if not loop.last %}
+        {% set headerLink = headerLink ~ "," %}
+    {% endif %}
+    <link rel="dns-prefetch" href="{{ url }}">
+    <link rel="preconnect" href="{{ url }}" crossorigin>
+{% endfor %}
+{% header headerLink %}
+
+{# Favicons, webapp manifests, etc. #}
+{{ craft.twigpack.includeFileFromManifest("webapp.html") }}
+{# Favicons #}
+{# <link rel="apple-touch-icon" sizes="180x180" href="/assets/global/favicon.ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/global/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/global/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/global/favicon.ico/site.webmanifest">
+<link rel="mask-icon" href="/assets/global/favicon.ico/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff"> #}

@@ -1,0 +1,34 @@
+{# NOTE: Need to receive following arguments:
+1. link - url object / string
+2. sublink - url string
+3. text - string
+4. arrow - boolean 
+5. arrowColor - string
+#}
+
+{%- macro a(text = "", linkInternal = '', linkExternal = '', attributes = {'style': '', 'class': ''}) -%}
+  {% set link = linkExternal ??? linkInternal.one.getUrl() %}
+  {% if (linkInternal is defined and linkInternal is not null) or (linkExternal is defined and linkExternal is not null) %}
+    <a href="{{ link }}" class="button {{ attributes.class }}" {{ attributes.style }} target="{{ linkExternal ? '_blank' : ''}}">
+      {{ text }}
+    </a>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro button(text = "", attributes = {'style': '', 'class': ''}) -%}
+  {% if (text != '') %}
+    <button class="button {{ attributes.class }}" {{ attributes.style }}>
+      {{ text }}
+    </button>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro custom(text = "", linkInternal = '', linkExternal = '', attributes = {'style': '', 'class': ''}) -%}
+  {% set link = linkInternal.one.getUrl() ??? linkInternal %}
+  {% if (linkInternal is defined and linkInternal is not null) or (linkExternal is defined and linkExternal is not null) %}
+    <a href="{{ link }}" class="button-custom {{ attributes.class }}" {{ attributes.style }} target="{{ linkExternal ? '_blank' : ''}}">
+      {{ text }}
+    </a>
+  {% endif %}
+{%- endmacro -%}
+

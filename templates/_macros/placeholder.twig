@@ -1,0 +1,33 @@
+{%- macro random(width = 800, height = 800, attributes = {}) -%}
+{# settings #}
+{% set placeholders = [
+	'/assets/error/fruit.jpg',
+	'/assets/error/fruit.jpg',
+	'/assets/error/fruit.jpg',
+]%}
+{% set randomURL = random(placeholders) %}
+{% set placeholderStyle = {
+	'background-image': 'url('~randomURL~')',
+	'background-position': 'center',
+	'background-size': 'cover',
+} %}
+{# logic #}
+{% set svg = '<svg xmlns="http://www.w3.org/2000/svg" width="'~width~'" height="'~height~'"/>'|url_encode %}
+{% set src = 'data:image/svg+xml;charset=utf-8,'~svg %}
+{% set attributes = attributes|merge({src: src}) %}
+{% set attributes = attributes|merge({style: placeholderStyle}) %}
+{{tag('img', attributes)}}
+{%- endmacro -%}
+{# Example for code above: {{ placeholder.random(800,800,{'class':'hidden xl:block w-1/3 object-cover'}) }} #}
+
+{%- macro randomURL() -%}
+{# settings #}
+{% set placeholders = [
+	'/assets/error/fruit.jpg',
+	'/assets/error/fruit.jpg',
+	'/assets/error/fruit.jpg',
+]%}
+{{ random(placeholders) }}
+{%- endmacro -%}
+{# Example for code above: {{ placeholder.randomURL() }} #}
+

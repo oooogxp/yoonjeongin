@@ -1,0 +1,54 @@
+fieldLayouts:
+  8195fef0-b1bf-421a-93d5-7b2dbb45c8b0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: baf60513-992b-455e-8bc3-c62a7ce9fcc5 # Company Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: dc800c7f-52ab-40d7-9dae-fb2bc60f0127 # Company Address 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 85c2ba86-2519-4576-8c4f-2c97f36b3fe2 # Company Address 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0e4636c9-18f2-4fa0-8642-7613b9192efb # Company Email
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7c7f7e37-395a-4140-bd60-c195ee3917bb # Company Phone
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Info
+        sortOrder: 1
+handle: company
+name: 'Company Info'

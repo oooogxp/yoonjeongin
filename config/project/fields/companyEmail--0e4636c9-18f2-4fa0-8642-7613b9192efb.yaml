@@ -1,0 +1,11 @@
+contentColumnType: string
+fieldGroup: dd11dc8a-c8ec-4ed5-9620-ce9b283cf148 # Company Info
+handle: companyEmail
+instructions: 'Company Email'
+name: 'Company Email'
+searchable: true
+settings:
+  placeholder: company@email.com
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

@@ -1,0 +1,32 @@
+contentColumnType: string
+fieldGroup: 33023d69-c14e-46a9-917c-916d6650938a # Team
+handle: bioPhoto
+instructions: ''
+name: 'Bio Photo'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:19f3c2d1-c7d3-4c94-b272-44315997a0b5' # Team
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:0eceb3e7-9c9c-4144-a53b-15bd306b0950'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:19f3c2d1-c7d3-4c94-b272-44315997a0b5' # Team
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

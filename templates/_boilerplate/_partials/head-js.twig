@@ -1,0 +1,40 @@
+{# -- This is a place for any JavaScripts that needs to exist on every page on the site -- #}
+
+{% if getenv('ENVIRONMENT') != 'production' %}
+    <script>console.log("Development Environment.");</script>
+{% endif %}
+
+{# Inline and polyfill JS #}
+{# Polyfills detected by User-Agent as per: https://polyfill.io/v2/docs/examples#feature-detection #}
+<script src="https://cdn.polyfill.io/v3/polyfill.min.js?callback=polyfillsAreLoaded&flags=gated" defer async></script>
+
+{# -- Service Worker -- #}
+{# {% if not craft.app.config.general.devMode %}
+    {% include "_boilerplate/_partials/register-service-worker.twig" %}
+{% endif %} #}
+
+{# Handle tabs gracefully as per https://hackernoon.com/removing-that-ugly-focus-ring-and-keeping-it-too-6c8727fefcd2 #}
+{% include "_boilerplate/_partials/tab-handler.twig" %}
+
+{# -- Tiny Cookie JavaScript -- #}
+<script>
+    {{ source("_inline-js/tiny-cookie.min.js") }}
+</script>
+
+{# -- Google Analytics -- #}
+{% if getenv('ENVIRONMENT') == 'production' %}
+    {# < Global site tag (gtag.js) - Google Analytics>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1034242-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1034242-2');
+    </script> #}
+{% else %}
+    <script>console.log("Google Analytics suppressed.");</script>
+{% endif %}
+
+{# -- Main Entry for custom JavaScript Code from /src/js/app.js -- #}
+<script src="{{ mix('js/app.js') }}" defer></script>

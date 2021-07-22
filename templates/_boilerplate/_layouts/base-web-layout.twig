@@ -1,0 +1,53 @@
+{# -- Base web layout template that all web requests inherit from -- #}
+{#
+ ┌─────────────────────────────────────────────────────────────────────────────┐
+ │ ┌─────────────────────────────────────────────────────────────────────────┐ │
+ │ │                                 htmlTag                                 │ │
+ │ └─────────────────────────────────────────────────────────────────────────┘ │
+ │ ┌─────────────────────────────────────────────────────────────────────────┐ │
+ │ │                                 headTag                                 │ │
+ │ └─────────────────────────────────────────────────────────────────────────┘ │
+ │ ┌─────────────────────────────────────────────────────────────────────────┐ │
+ │ │                                                                         │ │
+ │ │                                                                         │ │
+ │ │                                                                         │ │
+ │ │                               headContent                               │ │
+ │ └─────────────────────────────────────────────────────────────────────────┘ │
+ │ ┌─────────────────────────────────────────────────────────────────────────┐ │
+ │ │                                 bodyTag                                 │ │
+ │ └─────────────────────────────────────────────────────────────────────────┘ │
+ │ ┌─────────────────────────────────────────────────────────────────────────┐ │
+ │ │                                                                         │ │
+ │ │                                                                         │ │
+ │ │                                                                         │ │
+ │ │                               bodyContent                               │ │
+ │ └─────────────────────────────────────────────────────────────────────────┘ │
+ │                                                                             │
+ │                                  htmlPage                                   │
+ └─────────────────────────────────────────────────────────────────────────────┘
+#}
+{% extends "_layouts/global-variables.twig" %}
+
+{%- block htmlPage -%}
+    {% minify %}
+    <!DOCTYPE html>
+        <html class="fonts-loaded" lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+            <head>
+                {# -- Page content that should be included in the <head> -- #}
+                {% block headContent %}
+                {% endblock headContent %}
+            </head>
+
+            <body class="m-0">
+                {# -- Page content that should be included in the <body> -- #}
+                {% include "_boilerplate/_partials/ie-11-warning.twig" %}
+
+                {% block bodyContent %}
+                {% endblock bodyContent %}
+                
+                {# Cookie Banner #}
+                {# {% include "_boilerplate/_partials/cookie-banner.twig" %} #}
+            </body>
+        </html>
+    {% endminify %}
+{%- endblock htmlPage -%}

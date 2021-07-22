@@ -1,0 +1,91 @@
+field: 5c1e17dd-b91e-4c7c-a570-2a1c214c11d1 # Robust Link
+fieldLayouts:
+  a340dcc2-5f7e-41eb-8d06-6a53ab0563f5:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: efb18cc2-1a86-4784-af4d-2e7ddc039691 # Link Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 19fee1cc-dd40-48f7-8d43-40788c6e173e # Entry Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 90c35e17-f8bf-4673-b097-def9cfefec0b # External Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  19fee1cc-dd40-48f7-8d43-40788c6e173e: # Entry Link
+    contentColumnType: string
+    fieldGroup: null
+    handle: entryLink
+    instructions: 'If the link is internal, select the entry to link to here'
+    name: 'Entry Link'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: false
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  90c35e17-f8bf-4673-b097-def9cfefec0b: # External Link
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: externalLink
+    instructions: 'If you are linking externally, add the external link here. Include https://'
+    name: 'External Link'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  efb18cc2-1a86-4784-af4d-2e7ddc039691: # Link Title
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkTitle
+    instructions: ''
+    name: 'Link Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

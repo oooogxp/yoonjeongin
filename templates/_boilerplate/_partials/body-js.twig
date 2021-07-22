@@ -1,0 +1,20 @@
+{# -- This is a place for any JavaScript that needs to exist on every page on the site before </body> ends -- #}
+
+{# HUBSPOT CONFIG #}
+{% if getenv('ENVIRONMENT') == 'production' %}
+  <!-- Start of HubSpot Embed Code -->
+  {# <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5297068.js"></script> #}
+  <!-- End of HubSpot Embed Code -->
+  {# <script type="text/javascript">var _hsq = window._hsq = window._hsq || [];
+      _hsq.push(['addPrivacyConsentListener', function(consent) {
+      console.log("Hubspot consent granted.");
+      /*(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','UA-1034242-2');
+      console.log("UA-1034242-2 was triggered.");*/
+      }]);
+  </script> #}
+{% else %}
+    <script>console.log("Hubspot suppressed.");</script>
+{% endif %}

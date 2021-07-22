@@ -1,0 +1,39 @@
+{% block content %}
+
+  {% set navigations = craft.navigation.nodes().handle('mainNavigation').all() %}
+  
+  <nav id="nav-menu" class="fixed flex h-screen w-screen left-0 top-0 z-50 transition-all duration-300 ease-in-out nav-toggle-hide">
+  
+    <aside class="close-w-backdrop w-1/12 lg:w-1/2 opacity-0"></aside>
+
+    {# Content #}
+    <section class="w-11/12 lg:w-1/2 relative bg-gray-100 p-20 pb-0">
+      {# Close Button #}
+      <aside class="nav-menu-close absolute top-0 bg-gray-300 text-black p-6 cursor-pointer" style="left:-50px;">
+        <img src="/assets/global/x_icon.svg" alt="X Icon" />
+      </aside>
+
+      <section class="flex flex-col justify-between h-full overflow-y-scroll ">
+        <ul class="nav-menu-list list-none ml-0">
+          {# NOTE: Using verbb/navigation plugin #}
+          {% nav navigation in navigations %}
+            <li class="text-3xl cursor-pointer my-2 hover:text-gray-500">{{ navigation.link }}</li>
+          {% endnav %}
+          {# <li class="text-3xl cursor-pointer nav-contact-toggle">Contact</li> #}
+        </ul>
+        
+        <aside class="mt-10">
+          <h5 class="uppercase font-semibold text-sm">Contact</h5>
+          <p class="text-sm my-2">{{ company.companyAddressOne }} <br/> {{ company.companyAddressTwo }}</p>
+          <p class="text-sm">{{ company.companyEmail }} <br/>{{ company.companyPhone }}</p>
+          <ul class="flex my-4 list-none ml-0">
+            <li class="mr-4"><a href="https://twitter.com/" target="_blank"><img src="/assets/global/twitter_icon_white.png" class="w-12 mb-3" alt="twitter"></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><img src="/assets/global/facebook_icon_white.png" class="w-12 mb-3" alt="facebook"></a></li>
+          </ul>
+        </aside>
+      </section>
+
+    </section>
+  
+  </nav>
+{% endblock %}

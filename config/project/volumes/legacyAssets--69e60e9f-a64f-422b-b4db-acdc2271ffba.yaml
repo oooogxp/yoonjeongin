@@ -1,0 +1,39 @@
+fieldLayouts:
+  3f1b6406-eb84-4fb4-b109-a0b931011bc2:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: legacyAssets
+hasUrls: true
+name: 'Legacy Assets'
+settings:
+  path: images/wp-uploads/
+sortOrder: 10
+type: craft\volumes\Local
+url: /images/wp-uploads/

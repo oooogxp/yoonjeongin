@@ -1,0 +1,17 @@
+{% import '_macros/asset.twig' as asset %}
+
+{% set currentSection = entry.getSection().handle %}
+{% set entryType = entry.type.handle %}
+
+<nav class="absolute px-6 md:px-20 py-8 flex justify-between box-border w-full z-40 ">
+    <a href="/">
+        {{ asset.image("/assets/global/company-logo.svg", {"alt": "Company", "class": "object-cover h-64 w-64", "style": "height:75px; width:75px; margin-left: 10px;"}) }}
+    </a>
+
+    {# Hamburger Icon - Desktop #}
+    <a class="hidden lg:block nav-hamburger-icon cursor-pointer text-2xl">&#9776;</a>
+    {# Hamburger Icon - Mobile #}
+    <a class="lg:hidden nav-hamburger-icon-mobile cursor-pointer text-2xl">&#9776;</a>
+</nav>
+
+{% include '_partials/navbar-content' %}

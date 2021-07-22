@@ -1,0 +1,49 @@
+{# NOTE: entry from _about/_team/_entry.twig #}
+
+<div class="max-w-screen-xl mx-auto flex flex-col md:flex-row py-20">
+
+  {% set snippet = craft.entries().section('about').level(2).one() %}
+  {# Snippet Desktop #}
+  <div class="hidden md:block w-1/12 ml-20">
+    <p class="uppercase text-right transform tracking-widest rotate-180" style="writing-mode: vertical-lr;">{{ snippet.textSnippet }}</p>
+  </div>
+  {# Snippet Mobile #}
+  <div class="md:hidden my-10">
+    <p class="uppercase text-sm font-semibold text-center transform tracking-widest">{{ snippet.textSnippet }}</p>
+  </div>
+
+  <section class="flex flex-wrap lg:pl-20">
+    {# TODO Link with Backend #}
+
+    {% for block in entry %}
+
+      {# {{ d(block) }} #}
+
+      <article member-slug="{{ block.slug }}" class="team-details-toggle team-profile-hover w-full md:w-1/2 lg:w-1/3 px-10">
+        <img member-slug="{{ block.slug }}" class="object-cover w-full" style="height:300px;" src={{ block.bioPhoto.one() == null ? "/assets/global/placeholder.jpg" : block.bioPhoto.one.getUrl('thumbnail') }} alt="Profile Image" />
+        <div member-slug="{{ block.slug }}" class="my-4">
+          <h5 member-slug="{{ block.slug }}" class="uppercase font-semibold text-sm">{{ block.title }}</h5>
+          <h6 member-slug="{{ block.slug }}" class="uppercase font-semibold text-xs">{{ block.jobTitle }}</h6>
+        </div>
+      </article>
+      
+      {# Team Detail Slider #}
+      {% include '_partials/team-details' with { member: block } only %}
+
+    {% endfor %}
+
+  </section>
+
+</div>
+<script charset="utf-8" type="text/javascript">
+  const urlHash = window.location.hash;
+
+  if (urlHash.length > 0) {
+    const member = window.location.hash.substr(1);
+
+    if (document.querySelector(`#team-details-${member}`).classList.contains('nav-toggle')) {
+      document.querySelector(`#team-details-${member}`).classList.remove('nav-toggle');
+      document.querySelector('#nav-toggle-backdrop').classList.remove('nav-toggle');
+    }  
+  }
+</script>

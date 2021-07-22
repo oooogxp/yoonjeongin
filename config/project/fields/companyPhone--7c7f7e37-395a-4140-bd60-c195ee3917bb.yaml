@@ -1,0 +1,14 @@
+contentColumnType: string(255)
+fieldGroup: dd11dc8a-c8ec-4ed5-9620-ce9b283cf148 # Company Info
+handle: companyPhone
+instructions: 'Phone Number'
+name: 'Company Phone'
+searchable: true
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - tel
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

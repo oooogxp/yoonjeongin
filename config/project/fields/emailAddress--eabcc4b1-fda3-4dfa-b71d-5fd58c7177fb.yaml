@@ -1,0 +1,11 @@
+contentColumnType: string
+fieldGroup: 33023d69-c14e-46a9-917c-916d6650938a # Team
+handle: emailAddress
+instructions: ''
+name: 'Email Address'
+searchable: true
+settings:
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

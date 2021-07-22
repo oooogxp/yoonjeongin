@@ -1,0 +1,48 @@
+{# NOTE: member from team-members.twig #}
+
+{% block content %}
+
+  <div id="team-details-{{member.slug}}" class="fixed flex h-screen w-screen left-0 top-0 z-50 transition-all duration-300 ease-in-out nav-toggle"> {# .nav-toggle #}
+
+    <aside class="w-1/12 lg:w-1/2 opacity-0 text-white"></aside>
+
+    <section class="w-11/12 lg:w-1/2 bg-white relative">
+
+      {# Close Button #}
+      <aside member-slug="{{ member.slug }}" class="team-details-close absolute top-0 custom-bg-color-gray text-black p-6 cursor-pointer" style="left:-50px;">
+        <img member-slug="{{ member.slug }}" class="team-details-close" src="/assets/global/x_icon.svg" alt="X Icon" />
+      </aside>
+
+      <section class="flex flex-col justify-between h-full overflow-y-scroll">
+        <section class="flex justify-end h-full">
+          <div class="w-2/5 mt-10 mr-4 flex justify-end">
+            <p class="uppercase text-sm font-semibold text-right transform tracking-widest rotate-180" style="writing-mode: vertical-lr;">{{ member.textSnippet }}</p>
+          </div>
+          <img class="w-3/5 object-cover h-full" src="{{ member.bioPhoto.one() == null ? "/assets/global/placeholder.jpg" : member.bioPhoto.one.getUrl('thumbnail') }}" alt="Profile Image"/>
+        </section>
+
+        <section class="flex flex-col p-10">
+          <article>
+            <h5 class="font-semibold text-lg">{{ member.title }}</h5>
+            <h5 class="uppercase font-medium text-sm tracking-wider">{{ member.jobTitle }}</h5>
+          </article>
+          <div class="main-content">{{ member.bio }}</div>
+        </section>
+
+        {# {% if craft.request.getQueryString('member') %}
+          {{ d(craft.request.getQueryString('member')) }}
+          {{ d(craft.request.getParam('member')) }}
+          {% set memberSlug = 'slug:"'~craft.request.getParam('member')~'"' %}
+          
+          {% set member = craft.entries().section('about').level(2).level(3).search(memberSlug).one() %}
+          {{ d(member) }}
+
+
+        {% endif %} #}
+      </section>
+
+    </section>
+  
+  </div>
+
+{% endblock %}

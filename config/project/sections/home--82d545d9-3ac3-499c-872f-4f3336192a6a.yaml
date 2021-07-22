@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: home
+name: Home
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - Page
+      -
+        - urlFormat
+        - /
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  988e54bc-f2ef-46d4-b73b-3af77d27754d: # Craft-template
+    enabledByDefault: true
+    hasUrls: true
+    template: index
+    uriFormat: __home__
+type: single

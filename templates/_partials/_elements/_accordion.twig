@@ -1,0 +1,20 @@
+<section name="accordion" class="bg-tertiary-light-green text-secondary-green">
+  <div class="max-w-screen-xl mx-auto px-8 lg:px-0 py-10 flex flex-col lg:flex-row">
+    <h2 class="w-full lg:w-1/4 leading-tight text-7xl">{{ data.headline }}</h2>
+    <div class="w-full lg:w-3/4 lg:pl-20">
+
+      {% set index = 0 %}
+      {% for content in data.accordion.all() %}
+        {% set index = index + 1 %}
+        <article class="my-8 accordion {{ index == 1 ? 'active' : '' }}" aria-controls="accordion-{{ index }}">
+          <h6 class="flex justify-between text-sm font-bold w-full uppercase border-b pb-4 mb-4 border-secondary-green tracking-wider" role="button"><span>Headline / {{ content.headline }}</span><span class="text-4xl leading-3 p-2 font-light cursor-pointer active-icon">{{ index == 1 ? '-' : '+' }}</span></h6>
+          <p class="hidden" id="accordion-{{ index }}" aria-expanded="{{ index == 1 ? 'true' : 'false' }}" >
+            <span class="text-sm font-bold uppercase" style="min-width: 30px;">Content / </span>
+            <span class="text-black text-lg">{{ content.contents|striptags|raw }}</span>
+          </p>
+        </article>
+      {% endfor %}
+      
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+fieldLayouts:
+  cb219136-8e8f-40ae-b092-abe3acf4415f:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: headers
+hasUrls: true
+name: Headers
+settings:
+  path: images/headers
+sortOrder: 8
+type: craft\volumes\Local
+url: /images/headers

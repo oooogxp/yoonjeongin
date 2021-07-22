@@ -1,0 +1,9 @@
+format: jpg
+handle: headerImage
+height: null
+interlace: none
+mode: fit
+name: 'Header Image'
+position: center-center
+quality: 60
+width: 2000

@@ -1,0 +1,23 @@
+// Add any global scss here:
+
+.button {
+  @apply border;
+  @apply border-gray-500;
+  @apply py-2;
+  @apply px-4;
+  @apply my-2;
+  @apply inline-block;
+}
+
+.container-max-screen {
+  @apply max-w-screen-2xl;
+  @apply mx-auto;
+}
+
+.video-container {
+  min-height: 300px;
+  // Medium (md)
+  @media (min-width: 768px) { 
+    min-height: 550px;
+   }
+}

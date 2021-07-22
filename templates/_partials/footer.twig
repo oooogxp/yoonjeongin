@@ -1,0 +1,19 @@
+<footer class="bg-gray-500 px-6 py-8 md:px-20 md:py-16 flex flex-col md:flex-row justify-between">
+    <section class="order-2 md:order-1">
+        <p class="uppercase text-sm tracking-wider">{{ company.companyName ??? 'Legion Collective' }}</p>
+        <p class="text-muted text-sm my-1">{{ company.companyAddressOne ??? 'Chicago' }}, {{ company.companyAddressTwo ??? 'Illinois' }}</p>
+        <p class="text-gray text-sm flex flex-col md:flex-row"><span>{{ company.companyEmail ??? 'sample@email.com' }}</span><span class="hidden md:block md:mx-4">|</span><span>{{ company.companyPhone ??? '123.456.7890' }}</span></p>
+    </section>
+    <section class="order-1 md:order-2 text-center md:text-right md:border-0 border-b pb-10 md:pb-0 mb-8 md:mb-0">
+        {# TODO: Static - Need to implement Policy links with backend #}
+        <p class="uppercase text-sm flex justify-between tracking-wider">
+            <a href="https://craft-template.test" target="_new" class="hover:text-gray">Sample Portal</a>
+            <span class="md:mx-4 text-muted">|</span>
+            <a href="/careers" class="hover:text-gray">Careers</a>
+            <span class="md:mx-4 text-muted">|</span>
+            <a href="/terms" class="hover:text-gray">Privacy Policy</a>
+        </p>
+        <captions class="hidden md:block mt-6 text-muted text-sm">© {{ "now"|date('Y') }} {{ company.companyName ??? 'Legion Collective' }}</captions>
+    </section>
+    <captions class="order-3 text-right md:hidden text-muted">© {{ "now"|date('Y') }} {{ company.companyName ??? 'Legion Collective' }}</captions>
+</footer>

@@ -1,0 +1,46 @@
+{# -- Layout template for HTML pages -- #}
+{#
+ ┌─────────────────────────────────────────────────────────────────────────────┐
+ │ ┌─────────────────────────────────────────────────────────────────────────┐ │
+ │ │                                                                         │ │
+ │ │                                                                         │ │
+ │ │                                                                         │ │
+ │ │                                 content                                 │ │
+ │ └─────────────────────────────────────────────────────────────────────────┘ │
+ │                                                                             │
+ │                                  bodyHtml                                   │
+ └─────────────────────────────────────────────────────────────────────────────┘
+#}
+{% extends "_boilerplate/_layouts/base-html-layout.twig" %}
+
+{# -- Any <meta> tags that should be included in the <head> #}
+{% block headMeta %}
+{% endblock headMeta %}
+
+{# -- Any <link> tags that should be included in the <head> #}
+{% block headLinks %}
+{% endblock headLinks %}
+
+{# -- Any CSS that should be included before </head> -- #}
+{% block headCss %}
+{% endblock headCss %}
+
+{# -- Page body -- #}
+{% block bodyHtml %}
+
+    {# -- Navbar, Header -- #}
+    {% include "_partials/navbar.twig" %}
+    {% include "_partials/backdrop.twig" %}
+    {% include "_partials/header.twig" %}
+
+    {# -- Primary content block -- #}
+    {% block content %}
+    {% endblock %}
+
+    {# -- HTML Footer -- #}
+    {% include "_partials/footer.twig" %}
+
+    {# -- Cookie Banner -- #}
+    {# {% include "_partials/cookie-banner.twig" %} #}
+
+{% endblock bodyHtml %}

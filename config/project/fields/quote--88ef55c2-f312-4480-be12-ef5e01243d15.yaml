@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: 33023d69-c14e-46a9-917c-916d6650938a # Team
+handle: quote
+instructions: ''
+name: Quote
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - e62d3148-39d0-4f9c-9146-6ca3aaba7931 # Quote
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e01e5fa8-44c5-44e5-b1e2-84b0a56412af # Attribution
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_quote}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

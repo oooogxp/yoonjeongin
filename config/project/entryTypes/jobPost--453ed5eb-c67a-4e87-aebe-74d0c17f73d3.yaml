@@ -1,0 +1,51 @@
+fieldLayouts:
+  3f60cfe1-91d1-416c-8170-93b1ab838949:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: 'Job Title'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+        name: 'Job Description'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: b6f9734e-6887-4109-8fe5-c5f1cb6f7a4f # Content Builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 2
+handle: jobPost
+hasTitleField: true
+name: 'Job Post'
+section: 9f95afa9-825d-44e3-9bd5-bb4b141df49e # Careers
+sortOrder: 2
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: ''

@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: careers
+name: Careers
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  988e54bc-f2ef-46d4-b73b-3af77d27754d: # Craft-template
+    enabledByDefault: true
+    hasUrls: true
+    template: template/_careers/_entry
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 37b82919-904d-4771-aee5-f4a0139c3935
+type: structure

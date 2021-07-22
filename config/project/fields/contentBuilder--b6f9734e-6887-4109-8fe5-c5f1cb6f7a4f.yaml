@@ -1,0 +1,16 @@
+contentColumnType: string
+fieldGroup: 634fac22-3a60-437b-8562-03664b8b4e1c # Content Builder Elements
+handle: contentBuilder
+instructions: ''
+name: 'Content Builder'
+searchable: true
+settings:
+  maxBlocks: ''
+  maxLevels: ''
+  maxTopBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+  wasModified: false
+translationKeyFormat: null
+translationMethod: site
+type: benf\neo\Field

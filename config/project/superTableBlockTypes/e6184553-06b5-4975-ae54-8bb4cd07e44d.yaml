@@ -1,0 +1,74 @@
+field: 6a667c96-f49d-4aaa-a785-f1cf42368488 # Accordion
+fieldLayouts:
+  6dce8aae-3b8c-4433-b482-7fbb68523a25:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 841a86b9-3fea-4af3-8016-16717b16163e # Headline
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5d0b5431-50d7-477b-be9c-099272f1a2e9 # Contents
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5d0b5431-50d7-477b-be9c-099272f1a2e9: # Contents
+    contentColumnType: text
+    fieldGroup: null
+    handle: contents
+    instructions: ''
+    name: Contents
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  841a86b9-3fea-4af3-8016-16717b16163e: # Headline
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

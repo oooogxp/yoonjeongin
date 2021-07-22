@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: testimonials
+name: Testimonials
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  988e54bc-f2ef-46d4-b73b-3af77d27754d: # Craft-template
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

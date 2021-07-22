@@ -1,0 +1,18 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+{% import '_macros/asset.twig' as asset %}
+
+{% block content %}
+    {% set homeQuery = craft.entries().section('home').all() %}
+    <main name="index">
+        {# Using NEO plugin, thus need level(1) #}
+        {% include "_partials/_elements/_content-builder.twig" with { content: entry.contentBuilder.level(1).all() } %}
+        {{ asset.externalVideo('https://youtu.be/ScMzIvxBSi4') }}
+    </main>
+{% endblock %}
+
+{% block bodyJs %}
+    {{ parent() }}
+
+    {# -- Write any custom JavaScript that should be included before </body> below: -- #}
+
+{% endblock bodyJs %}

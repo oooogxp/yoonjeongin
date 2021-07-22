@@ -1,0 +1,39 @@
+
+<section name="carousel" class="glide bg-cover bg-center relative flex flex-col justify-center bg-gray-200">
+  <div class="py-20">
+    <h2 class="text-center mb-8">{{data.headline}}</h2>
+
+    {# Testimonial Slideshow content #}
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides z-5">
+        {% for testimonial in data.carousel.all() %}
+          <article class="glide__slide flex flex-col items-center w-full px-8 md:px-0">
+            <p class="text-center text-30 font-serif max-w-2xl">
+                {{ testimonial.simpleText|striptags }}
+            </p>
+            {% if testimonial.author|length %}<p class="text-center"><br>– {{ testimonial.author }} –</p>{% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {# Desktop: Glide Arrow Buttons #}
+  <div class="hidden md:flex absolute z-10 top-0 w-full h-full">
+    <div class="glide__arrows container-max-screen md:flex w-full h-full justify-between px-10" data-glide-el="controls" >
+      <button class="glide__arrow glide__arrow--left custom-bg-color-green w-8 text-red" data-glide-dir="<">
+        <img src="/assets/global/glide_arrows_left.png" />
+      </button>
+      <button class="glide__arrow glide__arrow--right custom-bg-color-green w-8 text-red" data-glide-dir=">">
+        <img src="/assets/global/glide_arrows_right.png" />
+      </button>
+    </div>
+  </div>
+
+  {# Mobile: Glide Bullet Guide #}
+  <div class="slider__bullets glide__bullets md:hidden flex justify-center mb-20" data-glide-el="controls[nav]">
+    {% for block in data.carousel.all() %}
+      <button class="slider__bullet glide__bullet" data-glide-dir="={{ loop.index - 1 }}"></button>
+    {% endfor %}
+  </div>
+</section>

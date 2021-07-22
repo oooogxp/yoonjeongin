@@ -1,0 +1,36 @@
+{% import '_macros/p.twig' as p %}
+
+<div class="max-w-screen-xxl mx-auto flex flex-col lg:flex-row mt-6 lg:mb-48">
+
+  <section class="accordion-container lg:w-1/2 custom-bg-color-light-gray divide-y divide-gray-400 p-8 lg:px-20 lg:py-12">
+    <h5 class="uppercase font-semibold text-base tracking-widest px-6 my-8">{{ p.heading(entry.headline) }}</h3>
+    {% for block in entry.accordion.all() %}
+      <div accordion-index="{{ loop.index }}" class="accordion flex justify-between items-center px-6 py-3 border-t border-gray-400 cursor-pointer {{ loop.index == 1 ? 'active' : '' }}">
+        <p class="pointer-events-none	uppercase font-semibold text-sm">{{ block.headline }}</p>
+        <span class="pointer-events-none text-3xl leading-tight">{{ loop.index == 1 ? '–' : '+' }}</span>
+      </div>
+
+      {# Mobile detail content #}
+      <article id="accordion-mobile-content-{{ loop.index }}" class="{{ loop.index == 1 ? '' : 'slideDownToggle' }} accordion-mobile-content flex lg:hidden overflow-hidden max-h-200vh transition-all duration-500 ease-in-out">
+        <div class="custom-bg-color-darker-gray flex flex-col lg:absolute w-full justify-center px-6 py-3">
+          <h1 class="text-5xl custom-color-gray leading-tightest w-full" style="hyphens: auto;">{{ block.headline }}</h1>
+          <div class="text-white py-8 content">{{ block.contents }}</div>
+        </div>
+      </article>
+
+    {% endfor %}
+  </section>
+
+  {# Desktop detail content #}
+  <div class="hidden lg:block lg:w-1/2 relative accordion-content-container">
+    {% for block in entry.accordion.all() %}
+      <section id="accordion-content-{{ loop.index }}" class="{{ loop.index != 1 ? 'hidden' : '' }} custom-bg-color-darker-gray p-8 lg:px-20 py-12 flex flex-col lg:absolute w-full justify-center" style="left:-60px; bottom:-120px; min-height: 500px;">
+        <!-- NOTE: width: 110px; height: 84px is for preventing window's browser cuasing a crop on images -->
+        <img class="accordion-content-close absolute cursor-pointer" style="top:-30px; right:50px; width: 110px; height: 84px;" src="/assets/global/-.svg" alt="Checkbox"/>
+        <h1 class="text-6xl custom-color-gray leading-tightest">{{ block.headline }}</h1>
+        <div class="text-white py-8 content">{{ block.contents }}</div>
+      </section>
+    {% endfor %}
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+childBlocks: ''
+field: b6f9734e-6887-4109-8fe5-c5f1cb6f7a4f # Content Builder
+fieldLayouts:
+  f9f57028-8ec9-47a3-875d-819672336264:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f2f4cbf6-8b9c-45bd-96b3-e34ecd08f313 # Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: headline
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Headline
+sortOrder: 2
+topLevel: true

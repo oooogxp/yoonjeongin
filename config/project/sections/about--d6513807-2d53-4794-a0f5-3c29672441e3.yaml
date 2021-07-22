@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: about
+name: About
+previewTargets:
+  1:
+    __assoc__:
+      -
+        - label
+        - 'Primary Entry'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  988e54bc-f2ef-46d4-b73b-3af77d27754d: # Craft-template
+    enabledByDefault: true
+    hasUrls: true
+    template: template/_about/_entry
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 446699ad-d16e-40a0-9ed7-6c1804d4d719
+type: structure

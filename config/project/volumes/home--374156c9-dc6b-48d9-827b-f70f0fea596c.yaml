@@ -1,0 +1,39 @@
+fieldLayouts:
+  1deab79e-c1be-4a93-a238-5f609f7fe00b:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: home
+hasUrls: true
+name: Home
+settings:
+  path: images/home
+sortOrder: 5
+type: craft\volumes\Local
+url: /images/home

@@ -1,0 +1,39 @@
+fieldLayouts:
+  ec7668fb-0484-4999-8976-82a918e86d64:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: about
+hasUrls: true
+name: About
+settings:
+  path: images/about
+sortOrder: 9
+type: craft\volumes\Local
+url: /images/about

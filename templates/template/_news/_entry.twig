@@ -1,0 +1,25 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+
+{% block content %}
+    {% set newsArticles = craft.entries().section('newsArticles').all() %}
+    <main name="news" class="container-max-screen px-8 md:px-20">
+        <h2>News Articles</h2>
+        <section class="flex flex-col">
+            {% for article in newsArticles %}
+                <a href="/news/{{ article.slug }}">
+                    <article class="my-4">
+                        <h3>{{ article.headline }}</h3>
+                        <div>{{ article.subHeadline }}</div>
+                    </article>
+                </a>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}
+
+{% block bodyJs %}
+    {{ parent() }}
+
+    {# -- Write any custom JavaScript that should be included before </body> below: -- #}
+
+{% endblock bodyJs %}

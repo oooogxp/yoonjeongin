@@ -1,0 +1,53 @@
+
+.rich-text {
+	
+  h1, h2, h3, h4, h5 {
+    @apply my-3;
+  }
+  p {
+    @apply mt-3;
+    @apply mb-6;
+  }
+  strong, b {
+	  @apply font-medium;
+  }
+  a {
+    @apply underline;
+    
+    &.bg-neutral-lightest-gray {
+      @apply no-underline;
+    }
+  }
+  ul {
+    @apply mt-3;
+    @apply mb-6;
+  }
+  ul li {
+    @apply list-disc;
+    @apply list-outside;
+    @apply ml-6;
+    @apply mb-3;
+    @apply font-light;
+  }
+
+  ol {
+    @apply mt-3;
+    @apply mb-6;
+  }
+  ol li {
+    @apply list-disc;
+    @apply list-outside;
+    @apply ml-6;
+    @apply mb-3;
+    @apply font-light;
+  }
+
+  // QUOTE
+  &.quote-container {
+    p {
+      @apply font-serif;
+      @apply font-medium;
+      @apply leading-tight;
+    }
+  }
+}

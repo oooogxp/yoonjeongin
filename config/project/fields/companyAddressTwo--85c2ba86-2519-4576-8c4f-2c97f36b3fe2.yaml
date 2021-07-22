@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: dd11dc8a-c8ec-4ed5-9620-ce9b283cf148 # Company Info
+handle: companyAddressTwo
+instructions: 'Enter Address Line 2'
+name: 'Company Address 2'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: 'Chicago, IL 60603'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

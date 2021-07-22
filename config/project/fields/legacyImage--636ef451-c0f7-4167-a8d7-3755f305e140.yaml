@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 37c3afdd-8944-40bf-a402-6b44f67cc2f8 # Legacy Import
+handle: legacyImage
+instructions: 'This is just used during import from the old site.'
+name: 'Legacy Image'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

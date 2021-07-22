@@ -1,0 +1,28 @@
+{% import '_macros/link.twig' as link %}
+
+{# NOTE: Check the current section in order to customize the styling for header #}
+{% set sectionHandle = entry.getSection().handle %}
+
+{# Home #}
+<header>
+  {% if sectionHandle == 'home' %}
+    <div class="pt-40 pb-20 px-8 md:px-20">
+      <div class="container-max-screen">
+        <h1>{{ entry.headline }}</h1>
+        <div>{{ entry.subHeadline }}</div>
+        {{ link.a(entry.robustLink.linkTitle, entry.robustLink.entryLink, entry.robustLink.externalLink, {'style': '', 'class': ''}) }}
+        {{ link.button('Modal', {'style': '', 'class': 'modal-open ml-2'}) }}
+        {% include '_partials/modal.twig' %}
+      </div>
+    </div>
+
+  {% else %}
+
+    <div class="bg-gray-200 pt-40 pb-20 px-8 md:px-20">
+      <div class="container-max-screen flex items-center">
+        <h1 class="w-1/2">{{ entry.headline }}</h1>
+        <div class="w-1/2">{{ entry.subHeadline }}</div>
+      </div>
+    </div>
+  {% endif %}
+</header>

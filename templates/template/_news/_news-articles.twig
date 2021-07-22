@@ -1,0 +1,17 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+
+{% block content %}
+    {# {% set homeQuery = craft.entries().section('home').all() %} #}
+    <main name="news-articles">
+        <div class="container-max-screen px-8 md:px-20 rich-text py-10">
+            {{ entry.articleContent }}
+        </div>
+    </main>
+{% endblock %}
+
+{% block bodyJs %}
+    {{ parent() }}
+
+    {# -- Write any custom JavaScript that should be included before </body> below: -- #}
+
+{% endblock bodyJs %}

@@ -1,0 +1,36 @@
+<!-- IE 11 Warning -->
+<aside class="hidden ie-11-container fixed items-center h-screen w-screen z-50">
+  <div class="absolute h-full w-full z-10 opacity-75 top-0" style="background-color: #000000;"></div>
+  <section class="relative z-20 m-auto p-20 flex flex-col items-center text-center" style="max-height: 550px; max-width: 800px; background-color: #ffffff;">
+    <img onclick="document.querySelector('.ie-11-container').classList.add('hidden');document.body.style.overflow = 'auto';" class="ie-11-container-close absolute cursor-pointer" style="right: 1em; top: 1em;" src="/assets/images/svg/close.svg" alt="Close"/>
+    <h1 class="leading-none">Browser not supported</h1>
+    <p class="m-10" style="max-width: 400px;">It looks like you may be using a web browser that we don’t support. Make sure you’re using the most recent version of your browser, or try using one of these supported browsers:</p>
+    <section class="flex justify-between w-full px-20">
+      <article class="flex flex-col items-center">
+        <img src="/assets/images/svg/edge.svg" alt="Edge"/>
+        <h5 class="uppercase text-center font-semibold mt-4">Edge</h5>
+      </article>
+      <article class="flex flex-col items-center">
+        <img src="/assets/images/svg/chrome.svg" alt="Chrome"/>
+        <h5 class="uppercase text-center font-semibold mt-4">Chrome</h5>
+      </article>
+      <article class="flex flex-col items-center">
+        <img src="/assets/images/svg/firefox.svg" alt="Firefox"/>
+        <h5 class="uppercase text-center font-semibold mt-4">Firefox</h5>
+      </article>
+      <article class="flex flex-col items-center">
+        <img src="/assets/images/svg/safari.svg" alt="Safari"/>
+        <h5 class="uppercase text-center font-semibold mt-4">Safari</h5>
+      </article>
+    </section>
+  </section>
+</aside>
+
+<!-- IE 11 Check -->
+<script>
+  if (window.document.documentMode) {
+    document.body.style.overflow = "hidden";
+    document.querySelector('.ie-11-container').classList.remove('hidden');
+    document.querySelector('.ie-11-container').classList.add('flex');
+  }
+</script>
